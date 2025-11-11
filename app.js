@@ -8,13 +8,13 @@ const STORAGE_KEYS = {
 
 // Default menu with images (royalty-free placeholders)
 const DEFAULT_MENU = [
-	{ id: cryptoRandomId(), name: "Tea", price: 12, category: "Beverages", image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop" },
-	{ id: cryptoRandomId(), name: "Coffee", price: 20, category: "Beverages", image: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=800&auto=format&fit=crop" },
-	{ id: cryptoRandomId(), name: "Idly", price: 30, category: "Breakfast", image: "https://images.unsplash.com/photo-1650969989486-54b1be3e0c11?q=80&w=800&auto=format&fit=crop" },
-	{ id: cryptoRandomId(), name: "Dosa", price: 50, category: "Breakfast", image: "https://images.unsplash.com/photo-1596797038530-2c107229f796?q=80&w=800&auto=format&fit=crop" },
-	{ id: cryptoRandomId(), name: "Poori", price: 45, category: "Breakfast", image: "https://images.unsplash.com/photo-1726800555357-1a492df6e5e7?q=80&w=800&auto=format&fit=crop" },
-	{ id: cryptoRandomId(), name: "Pongal", price: 40, category: "Breakfast", image: "https://images.unsplash.com/photo-1535241749838-299277b6305f?q=80&w=800&auto=format&fit=crop" },
-	{ id: cryptoRandomId(), name: "Vada", price: 25, category: "Snacks", image: "https://images.unsplash.com/photo-1668230558884-b88d62df9355?q=80&w=800&auto=format&fit=crop" }
+	{ id: cryptoRandomId(), name: "Tea", price: 12, category: "Beverages", image: "https://indianfoodfreak.com/wp-content/uploads/2023/05/IMG_20230521_162825.jpg" },
+	{ id: cryptoRandomId(), name: "Coffee", price: 20, category: "Beverages", image: "https://media.assettype.com/homegrown%2F2024-11-28%2Fd8kdthmm%2FWhatsApp-Image-2024-11-27-at-16.08.06.jpeg?w=480&auto=format%2Ccompress" },
+	{ id: cryptoRandomId(), name: "Idly", price: 30, category: "Breakfast", image: "https://t3.ftcdn.net/jpg/03/62/02/26/360_F_362022640_fZ6UM0JycJlFDdBiR1pYlNddKfdGvYwR.jpg" },
+	{ id: cryptoRandomId(), name: "Dosa", price: 50, category: "Breakfast", image: "https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__1200_0_0_0_auto.jpg" },
+	{ id: cryptoRandomId(), name: "Poori", price: 45, category: "Breakfast", image: "https://www.awesomecuisine.com/wp-content/uploads/2020/03/poori-masala-kizhangu.jpg" },
+	{ id: cryptoRandomId(), name: "Pongal", price: 40, category: "Breakfast", image: "https://thumbs.dreamstime.com/b/ven-pongal-famous-south-indian-breakfast-served-banana-leaf-270630914.jpg" },
+	{ id: cryptoRandomId(), name: "Vada", price: 25, category: "Snacks", image: "https://myfoodstory.com/wp-content/uploads/2022/09/Medu-Vada-5.jpg" }
 ];
 
 // In-memory state
