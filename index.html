@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Restaurant Billing</title>
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="app-header">
+		<div class="brand">
+			<div class="logo">🍽️</div>
+			<h1>Restaurant Billing</h1>
+		</div>
+		<nav class="nav">
+			<button class="nav-btn" data-view="shop">Menu & Billing</button>
+			<button class="nav-btn" data-view="invoices">Invoices</button>
+			<button class="nav-btn" data-view="manage">Manage Menu</button>
+			<button class="nav-btn" data-view="reports">Monthly Sales</button>
+		</nav>
+	</header>
+
+	<main class="container">
+		<section id="view-shop" class="view active">
+			<div class="menu-and-cart">
+				<div class="menu">
+					<div class="menu-header">
+						<h2>Menu</h2>
+						<input id="menu-search" type="search" placeholder="Search menu..." />
+					</div>
+					<div id="menu-grid" class="menu-grid"></div>
+				</div>
+				<aside class="cart">
+					<div class="cart-header">
+						<h2>Cart</h2>
+						<button id="clear-cart" class="secondary">Clear Cart</button>
+					</div>
+					<div id="cart-items" class="cart-items"></div>
+					<div class="totals">
+						<div class="row">
+							<span>Subtotal</span><span id="subtotal">₹0.00</span>
+						</div>
+						<div class="row grand">
+							<span>Total</span><span id="grand-total">₹0.00</span>
+						</div>
+					</div>
+					<div class="cart-actions">
+						<button id="clear-cart-2" class="secondary">Clear Cart</button>
+						<button id="pay-now" class="primary">Pay Now</button>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		<section id="view-invoices" class="view">
+			<h2>Invoices</h2>
+			<div id="invoice-list" class="report-table"></div>
+		</section>
+
+		<section id="view-manage" class="view">
+			<h2>Manage Menu</h2>
+			<form id="menu-form" class="menu-form">
+				<input type="hidden" id="item-id" />
+				<div class="form-row">
+					<label>Name</label>
+					<input id="item-name" type="text" placeholder="e.g., Dosa" required />
+				</div>
+				<div class="form-row">
+					<label>Price (₹)</label>
+					<input id="item-price" type="number" min="0" step="0.01" placeholder="e.g., 50" required />
+				</div>
+				<div class="form-row">
+					<label>Image URL</label>
+					<input id="item-image" type="url" placeholder="https://..." required />
+				</div>
+				<div class="form-row">
+					<label>Category</label>
+					<input id="item-category" type="text" placeholder="e.g., Breakfast" />
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="primary" id="save-item">Save Item</button>
+					<button type="button" id="reset-form" class="secondary">Reset</button>
+				</div>
+			</form>
+			<div class="manage-list-header">
+				<h3>Current Menu</h3>
+				<input id="manage-search" type="search" placeholder="Search items..." />
+			</div>
+			<div id="manage-list" class="manage-list"></div>
+		</section>
+
+		<section id="view-reports" class="view">
+			<h2>Monthly Sales Report</h2>
+			<div class="report-controls">
+				<label>Month</label>
+				<input type="month" id="report-month" />
+				<button id="load-report" class="primary">Load</button>
+			</div>
+			<div id="report-summary" class="report-summary"></div>
+			<div id="report-table" class="report-table"></div>
+		</section>
+	</main>
+
+	<!-- QR Modal -->
+	<div id="qr-modal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Scan to Pay</h3>
+				<button id="close-qr" class="icon-btn" aria-label="Close">✖</button>
+			</div>
+			<div id="qr-code" class="qr-code"></div>
+			<div class="qr-note">Use any UPI/QR scanner to pay the bill amount.</div>
+			<div class="modal-actions">
+				<button id="mark-paid" class="primary">Mark as Paid</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Invoice Modal -->
+	<div id="invoice-modal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Invoice</h3>
+				<button id="close-invoice" class="icon-btn" aria-label="Close">✖</button>
+			</div>
+			<div id="invoice-content"></div>
+			<div class="modal-actions" style="margin-top:8px; gap:8px;">
+				<button id="print-invoice">Print/Download</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Printable Bill -->
+	<div id="print-area">
+		<div class="bill">
+			<h2>Restaurant Bill</h2>
+			<div id="bill-date"></div>
+			<div id="bill-items"></div>
+			<div id="bill-totals"></div>
+			<div class="thanks">Thank you! Visit again.</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
+
+
